@@ -1,0 +1,15 @@
+{
+  "name": "catsbee",
+  "version": "1.0.0",
+  "description": "Cat SNS",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "BB",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
