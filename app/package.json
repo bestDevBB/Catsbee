@@ -4,11 +4,13 @@
   "description": "Cat SNS",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "nodemon ./bin/www.js"
   },
   "author": "BB",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
   }
