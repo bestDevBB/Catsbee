@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <script src="/js/home/login.js" defer></script>
+    <script src="/js/home/register.js" defer></script>
     <!-- 미들웨어에 static 메소드를 이용하여 정적 경로를 추가해줬음 -->
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <input id="id" type="text" placeholder="아이디"/><br>
+    <input id="name" type="text" placeholder="이름"/><br>
     <input id="password" type="password" placeholder="비밀번호"/><br>
-    <button id="loginBtn" type="submit">로그인</button>
+    <input id="confirm-password" type="password" placeholder="비밀번호 확인"/><br>
+    <button id="registerBtn" type="submit">SIGN UP</button>
 </body> 
 </html>
