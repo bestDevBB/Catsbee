@@ -9,34 +9,38 @@ const id = document.getElementById("id"),
 loginBtn.addEventListener("click", login);
 
 function login() {
-  if(!id.value) return alert("아이디를 입력해주세요.");
-  if(!password.value) return alert("비밀번호를 입력해주세요.");
+  // if(!id.value) return alert("아이디를 입력해주세요.");
+  // if(!password.value) return alert("비밀번호를 입력해주세요.");
 
-  axios.post("/login", {
+  const req = {
     id: id.value,
-    password: password.value,
-    // body: JSON.stringify(req)
-  })
-//   const req = {
-//     id: id.value,
-//     password: password.value
-// };
-//   fetch("/login", { // 로그인을 요청하는 fetch, 서버에 전달
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json" // 내가 보내는 데이터의 타입
-//     }, // JSON 데이터라고 알려줌
-//     body: JSON.stringify(req) // req를 문자열로 바꿔줌
-// })
-  .then((res) => { console.log(res);
-  //   if(res.success) {
-  //     location.href = "/";
-  //   } else {
-  //     if(res.err) return alert(res.err);
-  //     alert(res.msg);
-  //   };
+    password: password.value
+  };
+
+  // axios.post("/login", {
+  //   id: id.value,
+  //   password: password.value,
+  //   // body: JSON.stringify(req)
   // })
-  // .catch((err) => {
-  //   console.error(new Error("로그인 중 에러 발생!"));
-  });
+
+  fetch("/login", { // 로그인을 요청하는 fetch, 서버에 전달
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json" // 내가 보내는 데이터의 타입
+    }, // JSON 데이터라고 알려줌
+    body: JSON.stringify(req) // req를 문자열로 바꿔줌
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      if(res.success) { // res.success가 true일 경우
+        location.href = "/";
+      } else {
+        // if (res.err) return alert(res.err);
+        alert(res.msg);
+      }
+  })
+  .catch((err) => {
+    console.err(new Error("로그인 중 에러 발생"));
+  })
 };
